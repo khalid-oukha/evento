@@ -17,13 +17,13 @@
                     <span class="w-16 h-2 bg-orange-100 dark:bg-white mb-4 sm:mb-6"></span>
                     <h1
                         class="font-bebas-neue uppercase text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black flex flex-col leading-tight dark:text-white text-white mb-4 sm:mb-6">
-                        Elevate Your Fitness Journey WITH Gym
+                        Elevate Your Fitness Journey WITH events
                         <span class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-orange-100">
-                            SANTORYO
+                            EasyEVENT
                         </span>
                     </h1>
                     <p class="text-sm sm:text-base text-white dark:text-white mb-6 sm:mb-8">
-                        Unleash the best version of yourself at Santoryo Gym. Our state-of-the-art facilities, expert
+                        Unleash the best version of yourself at EasyEVENT events. Our state-of-the-art facilities, expert
                         trainers, and vibrant community are here to inspire and guide you on your fitness journey.
                     </p>
                     <div class="flex flex-col sm:flex-row items-start sm:items-center">
@@ -45,61 +45,62 @@
     </main>
 
 
-    <section class=" relative  overflow-hidden  w-full h-full  ">
-        <img class="absolute inset-0  object-cover w-full h-full" src="{{ asset('assets/images/section3.jpg') }}"
-            alt="" srcset="">
-        <div
-            class=" py-20 px-8  customgradient  w-full h-full dark:bg-gray-800 flex relative z-50 items-center overflow-hidden">
-            <div class="container mx-auto px-6 flex relative pt-12">
-                <div class="sm:w-2/3  lg:w-50 flex flex-col relative z-50">
-                    <span class="w-20 h-2  bg-orange-100 dark:bg-white mb-12">
-                    </span>
-                    <h2
-                        class="font-bebas-neue uppercase text-4xl sm:text-4xl font-black flex flex-col leading-none dark:text-white text-white">
-                        About Santoryo Gym
-                        <span class="text-4xl sm:text-4xl text-orange-100 ">
-                            SANTORYO
-                        </span>
-                    </h2>
-                    <p class="text-sm sm:text-base py-4 text-white dark:text-white">
-                        At Santoryo, we believe that a gym is not just a place to work out; it's a community that
-                        fosters
-                        holistic well-being. Our story began with a passion for empowering individuals to lead
-                        healthier,
-                        happier lives. Today, Santoryo Gym stands as a testament to that commitment.
-
-                        Santoryo is more than a gym; it's a lifestyle movement. We are dedicated to providing a
-                        welcoming
-                        and inclusive space where individuals of all fitness levels can thrive. Our mission is to
-                        inspire,
-                        motivate, and guide you on your journey towards a stronger, healthier, and more vibrant life.
-
-                        Expert Guidance: Our team of experienced trainers is committed to your success. Whether you're a
-                        beginner or an advanced fitness enthusiast, we tailor our guidance to meet your unique needs.
-                        State-of-the-Art Facilities: Santoryo Gym is equipped with cutting-edge fitness equipment,
-                        ensuring
-                        a dynamic and effective workout experience.
-                    </p>
-                    <div class="flex mt-8">
-                        <a href="#"
-                            class="uppercase py-2 px-4 rounded-lg bg-transparent border-2 border-orange-100 text-orange-100 dark:text-white hover:bg-pink-500 hover:text-white text-md">
-                            About us
-                        </a>
-                    </div>
+    <section class="relative overflow-hidden w-full h-full">
+        <img class="absolute top-0 left-0 object-cover w-full h-full" src="{{ asset('assets/images/section3.jpg') }}"
+            alt="Background Image">
+        <div class="flex relative z-50 h-full items-center justify-center customgradient  px-8 dark:bg-gray-800">
+            <div class="container mx-auto flex flex-wrap items-start">
+                <div class="w-full lg:w-2/5">
+                    <img src="{{ asset('assets/images/aboutimg.png') }}" alt="Violinist" class="w-full inset-0 lg:max-w-lg"
+                        style="transform: translateY(0%);">
                 </div>
-                <div class=" hidden lg:block lg:w-3/5 relative">
-                    <img src="{{ asset('assets/images/aboutimg.png') }}" class="max-w-1/2 md:max-w-xl m-auto" />
+                <div class="w-full lg:w-3/5 px-6 text-center lg:text-left">
+                    <div class="py-12">
+                        <span class="w-20 h-2 bg-orange-100 dark:bg-white mb-12 inline-block"></span>
+                        <h2
+                            class="font-bebas-neue uppercase text-4xl sm:text-4xl font-black leading-none dark:text-white text-white">
+                            About EasyEVENT events
+                            <span class="text-4xl sm:text-4xl text-orange-100">
+                                EasyEVENT
+                            </span>
+                        </h2>
+                        <p class="text-sm sm:text-base text-white dark:text-white py-4">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore necessitatibus ut odit
+                            corrupti sint optio neque dolorum itaque quasi nisi ipsam incidunt at voluptates, possimus,
+                            repellat nihil provident! Ut, officia. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Odit quia consequuntur incidunt praesentium velit neque rerum voluptatem vitae, veritatis cumqueatis cumque
+                            distinctio totam a iusto. Aliquam fugit eligendi nisi officia possimus?
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore necessitatibus ut odit
+                            corrupti sint optio neque dolorum itaque quasi nisi ipsam incidunt at voluptates, possimus,
+                            repellat nihil provident! Ut, officia. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Odit quia consequuntur incidunt praesentium velit neque rerum voluptatem vitae, veritatis cumque
+                            distinctio totam a iusto. Aliquam fugit eligendi nisi officia possimus?
+                            distinctio totam a iusto. Aliquam fugit eligendi nisi officia possimus?
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore necessitatibus ut odit
+                            corrupti sint optio neque dolorum itaque quasi nisi ipsam incidunt at voluptates, possimus,
+                            repellat nihil provident! Ut, officia. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Odit quia consequuntur incidunt praesentium velit neque rerum voluptatem vitae, veritatis cumque
+                            distinctio totam a iusto. Aliquam fugit eligendi nisi officia possimus?
+
+                        </p>
+                        <div class="mt-8">
+                            <a href="#"
+                                class="uppercase py-2 px-4 rounded-lg bg-transparent border-2 border-orange-100 text-orange-100 dark:text-white hover:bg-pink-500 hover:text-white text-md">
+                                About us
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
     </section>
+
 
     <section class=" customgradient w-full h-full  relative overflow-hidden ">
 
         <img class="absolute inset-0  object-cover w-full h-full" src="{{ asset('assets/images/section3.jpg') }}"
             alt="" srcset="">
-        <h2 class="flex justify-center customgradient relative font-bold text-4xl text-white  py-5 z-50"> Classes</h2>
+        <h2 class="flex justify-center customgradient relative font-bold text-4xl text-white  py-5 z-50"> UpComing Events</h2>
         <div class="flex relative z-50 customgradient items-center w-full h-full justify-center overflow-hidden">
 
             <div class="grid grid-cols-1 z-50 lg:w-3/4 gap-5 lg:grid-cols-3 lg:gap-10  ">
@@ -334,9 +335,6 @@
         </div>
 
     </section>
-
-
-   
 @endsection
 
 @section('scripts')
