@@ -29,7 +29,7 @@ class ForgotPasswordController extends Controller
         }
         else
         {
-            return redirect('auth.forgotpassword')->with('error', "User not found"); // You can handle the error case appropriately
+            return redirect('auth.forgotpassword')->with('error', "User not found");
         }
         
     }

@@ -35,7 +35,21 @@
                             class="px-8 pt-6 pb-8 mb-4  bg-dark-200 rounded">
                             @csrf
                             @method('POST')
+                            <div class="mb-4">
+                                <label class="block mb-2 text-sm font-bold text-gray-200 dark:text-white" for="email">
+                                    You want to Become : 
+                                </label>
+                                <select name="role"
+                                    class="w-full px-3 py-2 text-sm leading-tight text-gray-800 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                                    required>
+                                    <option  value="organizer">Organizer</option>
+                                    <option selected value="spectator">Spectator</option>
+                                </select>
+                            </div>
                             <div class="mb-4 md:flex md:justify-between">
+
+
+
                                 <div class="mb-4 md:mr-2 md:mb-0">
                                     <label class="block mb-2 text-sm font-bold text-gray-200 dark:text-white"
                                         for="firstName">
@@ -55,6 +69,7 @@
                                         id="lastName" type="text" placeholder="Last Name" name="lastname" />
                                 </div>
                             </div>
+
                             <div class="mb-4">
                                 <label class="block mb-2 text-sm font-bold text-gray-200 dark:text-white" for="email">
                                     Email
@@ -100,7 +115,7 @@
                             </div>
                             <div class="text-center">
                                 <a class="inline-block text-sm text-orange-100 dark:text-blue-500 align-baseline hover:text-orange-300"
-                                    href="./index.html">
+                                    href="{{ Route('login') }}">
                                     Already have an account? Login!
                                 </a>
                             </div>

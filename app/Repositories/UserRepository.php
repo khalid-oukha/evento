@@ -28,14 +28,12 @@ class UserRepository implements UserRepositoryInterface
     public function createUser(array $credentials)
     {
         $user = User::create($credentials);
-        if($user){
-            $memberRole = Role::where('name','member')->first();
-            // dd($memberRole);
-            $user->roles()->attach($memberRole->id);
-            auth()->login($user);
-            return true;
-        }
-        return false;
+        if ($user) {
+            $role = Role::where('name', $credentials['role'])->firstOrFail();
+            $user->roles()->attach($role->id);
 
+            return $user;
+        }
+        return null;
     }
 }

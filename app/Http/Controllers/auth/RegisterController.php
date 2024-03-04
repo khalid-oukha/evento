@@ -20,21 +20,34 @@ class RegisterController extends Controller
     {
         $this->userRepository = $userRepository;
     }
-    public function showRegistrationForm(){
+    public function showRegistrationForm()
+    {
         return view('auth.register');
     }
 
-    public function register(RegisterRequest $request){
+    public function register(RegisterRequest $request)
+    {
         $form = $request->validated();
-        // dd($form);
-
-
         $form['password'] = Hash::make($form['password']);
+        $user = $this->userRepository->createUser($form);
 
-        if($this->userRepository->createUser($form)){
-            return redirect('/');
+        if ($user) {
+            auth()->login($user); 
+    
+            if ($user->isAdmin()) {
+                return redirect()->route('admin.dashboard');
+            } elseif ($user->isOrganizer()) {
+                return redirect()->route('organizer.form', $user->id);
+            } elseif ($user->isSpectator()) {
+                return redirect('/');
+            }
+    
+        } else {
+            return back()->with('error', 'Registration failed.');
         }
-
-
+        
     }
+
+
+
 }

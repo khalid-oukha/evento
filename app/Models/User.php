@@ -2,7 +2,12 @@
 
 namespace App\Models;
 
+use App\Traits\HasPermissionsTrait;
+
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Organizer;
+use App\Models\Reservation;
+use App\Models\Role;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -10,7 +15,7 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, HasPermissionsTrait;
 
     /**
      * The attributes that are mass assignable.
@@ -18,7 +23,8 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'firstname',
+        'lastname',
         'email',
         'password',
     ];
@@ -42,6 +48,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public static function getEmailChecked($email){
+        return self::where('email', $email)->first();
+    }
+
+    public static function getTokenSingle($token){
+        return self::where('remember_token', $token)->first();
+    }
 
 
     public function roles()
@@ -67,5 +81,21 @@ class User extends Authenticatable
     public function tickets()
     {
         return $this->hasMany(Ticket::class);
+    }
+
+
+    public function isAdmin()
+    {
+        return $this->roles()->where('name', 'admin')->exists();
+    }
+    
+    public function isOrganizer()
+    {
+        return $this->roles()->where('name', 'organizer')->exists();
+    }
+    
+    public function isSpectator()
+    {
+        return $this->roles()->where('name', 'spectator')->exists();
     }
 }

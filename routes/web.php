@@ -1,12 +1,14 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
-use App\Http\Controllers\StatisticsController;
 use App\Http\Controllers\backoffice\CoachController;
+use App\Http\Controllers\organizer\OrganizerController;
+use App\Http\Controllers\StatisticsController;
+use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +35,10 @@ Route::post('/logout', [LoginController::class,'logout'])->name('logout');
 // Registration Routes...
 Route::get('/register', [RegisterController::class,'showRegistrationForm'])->name('registerform');
 Route::post('/register', [RegisterController::class,'register'])->name('register');
+
+// infos for organizer Routes...
+Route::get('/organizer/form/{userId}', [OrganizerController::class, 'showOrganizerForm'])->name('organizer.form');
+Route::post('/organizer/store', [OrganizerController::class, 'storeOrganizerInfo'])->name('organizer.store');
 
 // Password Reset Routes...
 Route::get('/password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('forget.passwordform');
