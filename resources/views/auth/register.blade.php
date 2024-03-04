@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('front.layouts.master')
 
 @section('title')
     Home
@@ -15,8 +15,8 @@
                 <!-- Row -->
                 <div class="w-full xl:w-3/4 lg:w-11/12 flex">
                     <!-- Col -->
-                    <img src="{{ URL::asset('assets/images/zorologin.jpg') }}"
-                        class="w-full h-auto bg-gray-400 dark:bg-gray-800 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg">
+                    <img src="{{ URL::asset('assets/images/section2.jpg') }}"
+                        class="w-full h-auto bg-gray-400 dark:bg-gray-800 hidden lg:block lg:w-7/12 bg-cover rounded-l-lg">
                     <!-- Col -->
                     <div class="w-full lg:w-7/12 bg-dark-200 dark:bg-gray-700 p-5 rounded-lg lg:rounded-l-none">
                         <h3 class="py-4 text-2xl text-center text-gray-100 dark:text-white">Create an Account!</h3>
