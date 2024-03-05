@@ -5,9 +5,11 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\backoffice\CoachController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\organizer\OrganizerController;
 use App\Http\Controllers\StatisticsController;
 use Illuminate\Support\Facades\Route;
+
 
 
 /*
@@ -51,4 +53,5 @@ Route::post('/reset', [ResetPasswordController::class,'GetnewPassword'])->name('
 
 
 
-    
+// dashboard Routes...
+Route::get('/category',[CategoryController::class, 'index'])->name('categorie.index');
