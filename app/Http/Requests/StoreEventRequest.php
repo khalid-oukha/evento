@@ -30,6 +30,7 @@ class StoreEventRequest extends FormRequest
             'capacity' => 'required|integer|min:1',
             'category_id' => 'required|exists:categories,id',
             'organizer_id' => 'required',
+            'availableSeats' => 'integer',
 
         ];
     }

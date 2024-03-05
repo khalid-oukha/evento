@@ -189,7 +189,7 @@
                                                         </button>
                                                     </div>
                                                 </a>
-                                                <a href="">
+                                                <a href="{{ route('events.cancel',$event->id) }}">
                                                     <div
                                                         class="inline-flex items-center px-1 py-1 rounded-full gap-x-2 text-red-500 bg-red-100/60 dark:bg-gray-800">
                                                         <button
@@ -223,7 +223,7 @@
                                                     </button>
                                                 </a>
 
-                                                <form action="" method="POST">
+                                                <form action="{{ route('event.destroy',$event->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit"

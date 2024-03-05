@@ -16,7 +16,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events = Event::paginate(5);
+        $events = Event::paginate(3);
         return view('back.events.index', compact('events'));
     }
 
@@ -39,7 +39,7 @@ class EventController extends Controller
     public function store(StoreEventRequest $request)
     {
         $data = $request->validated();
-
+        $data['availableSeats'] = $data['capacity'];
         $fileName = time() . $request->name . '.' . $request->image->extension();
         $request->image->storeAs('public/images', $fileName);
         $data['image'] = $fileName;
@@ -83,18 +83,27 @@ class EventController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $event = Event::findOrFail($id);
+        $event->delete();
+        return redirect()->route('event.index')->with('success', 'Event activated successfully.');
+
     }
 
     public function activateEvent($eventId)
     {
-        // Find the event by ID
         $event = Event::findOrFail($eventId);
-
-        // Update the event's status to 'active'
         $event->update(['status' => 'active']);
 
-        // Redirect back or to a specific route with a success message
         return redirect()->route('event.index')->with('success', 'Event activated successfully.');
+    }
+
+
+    public function cancelEvent($eventId)
+    {
+        $event = Event::findOrFail($eventId);
+        $event->update(['status'=> 'cancelled']);
+
+        return redirect()->route('event.index')->with('success', 'Event activated successfully.');
+
     }
 }

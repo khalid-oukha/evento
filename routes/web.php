@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\backoffice\CoachController;
 use App\Http\Controllers\Categories\CategoryController;
 use App\Http\Controllers\event\EventController;
+use App\Http\Controllers\home\UpcomingEventsController;
 use App\Http\Controllers\organizer\OrganizerController;
 use App\Http\Controllers\StatisticsController;
 use Illuminate\Support\Facades\Route;
@@ -62,3 +63,8 @@ Route::resource('category',CategoryController::class);
 Route::resource('event',EventController::class);
 
 Route::get('/events/{eventId}/activate', [EventController::class, 'activateEvent'])->name('events.activate');
+Route::get('/events/{eventId}/cancel', [EventController::class, 'cancelEvent'])->name('events.cancel');
+
+
+// home Routes...
+Route::get('/', [UpcomingEventsController::class,'index'])->name('home');
