@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
-use App\Traits\HasPermissionsTrait;
+use App\Models\Organizer;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
-use App\Models\Organizer;
 use App\Models\Reservation;
 use App\Models\Role;
+use App\Traits\HasPermissionsTrait;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -98,4 +99,6 @@ class User extends Authenticatable
     {
         return $this->roles()->where('name', 'spectator')->exists();
     }
+
+
 }

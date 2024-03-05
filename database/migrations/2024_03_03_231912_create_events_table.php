@@ -14,10 +14,12 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('image');
             $table->text('description');
             $table->date('date');
             $table->string('location');
-            $table->integer('availableSeats');
+            $table->integer('capacity');
+            $table->integer('availableSeats')->nullable();
             $table->enum('status', ['pending', 'active', 'cancelled']);
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->unsignedBigInteger('organizer_id');

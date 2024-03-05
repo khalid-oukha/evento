@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\backoffice\CoachController;
 use App\Http\Controllers\Categories\CategoryController;
+use App\Http\Controllers\event\EventController;
 use App\Http\Controllers\organizer\OrganizerController;
 use App\Http\Controllers\StatisticsController;
 use Illuminate\Support\Facades\Route;
@@ -54,5 +55,8 @@ Route::post('/reset', [ResetPasswordController::class,'GetnewPassword'])->name('
 
 
 
-// dashboard Routes...
+// category Routes...
 Route::resource('category',CategoryController::class);
+
+// Event Routes...
+Route::resource('event',EventController::class);
