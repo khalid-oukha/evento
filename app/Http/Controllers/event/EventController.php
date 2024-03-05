@@ -85,4 +85,16 @@ class EventController extends Controller
     {
         //
     }
+
+    public function activateEvent($eventId)
+    {
+        // Find the event by ID
+        $event = Event::findOrFail($eventId);
+
+        // Update the event's status to 'active'
+        $event->update(['status' => 'active']);
+
+        // Redirect back or to a specific route with a success message
+        return redirect()->route('event.index')->with('success', 'Event activated successfully.');
+    }
 }

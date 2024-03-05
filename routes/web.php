@@ -60,3 +60,5 @@ Route::resource('category',CategoryController::class);
 
 // Event Routes...
 Route::resource('event',EventController::class);
+
+Route::get('/events/{eventId}/activate', [EventController::class, 'activateEvent'])->name('events.activate');

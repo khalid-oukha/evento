@@ -9,7 +9,7 @@ class Event extends Model
 {
     use HasFactory;
     protected $fillable = [
-        "title",'description','category_id','capacity','location','organizer_id','image','date',
+        "title",'description','category_id','capacity','location','organizer_id','image','date','status'
     ] ;
 
     public function category()
@@ -32,8 +32,5 @@ class Event extends Model
         return $this->belongsToMany(User::class, 'reservations')->withPivot('number_of_seats', 'status');
     }
 
-    public function image()
-    {
-        return $this->hasOne(EventImage::class);
-    }
+
 }
