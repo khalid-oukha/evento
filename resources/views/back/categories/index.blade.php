@@ -5,7 +5,7 @@
 @endsection
 
 @section('title_page')
-Categories
+    Categories
 @endsection
 
 @section('css')
@@ -16,7 +16,7 @@ Categories
         <h2 class="my-6 text-4xl font-semibold text-center font-poppins tracking-widest text-gray-700 dark:text-gray-200">
             <span class="text-primary-100 dark:text-orange">@yield('title_page') </span> - Managment
         </h2>
-        <a href=""
+        <a href="{{ route('category.create') }}"
             class="px-4 py-2 my-4 bg-orange rounded customgradient  text-gray-100 hover:bg-orange-100 focus:outline-none transition-colors">
             Add a Category
         </a>
@@ -28,38 +28,34 @@ Categories
                     <thead>
                         <tr
                             class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                            <th class="px-4 py-3">ID</th>
-                            <th class="px-1 py-3">title</th>
-                            <th class="px-4 py-3">Content</th>
-                            <th class="px-4 py-3">companie</th>
-                            <th class="px-4 py-3">create by</th>
+                            <th class="px-4 py-3">Category</th>
+                            <th class="px-4 py-3">Description</th>
                             <th class="px-4 py-3"></th>
 
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
 
-
+                        @foreach ($categories as $category)
                             <tr class="text-gray-700 dark:text-gray-400">
-                                <td class="px-4 py-3 text-sm"></td>
-                                <td class="px-1 py-2 text-sm"></td>
-                                <td class="px-4 py-3 text-xs">
-                                    <span
-                                        class="px-2 py-1 font-semibold leading-tight text-gray-500 rounded-full dark:bg-green-700 dark:text-green-100">
-                                  
-                                    </span>
+                                <td class="px-4 py-3 text-sm">
+                                    <div class="flex items-center gap-x-2">
+                                        <img class="object-cover w-8 h-8 rounded-full"
+                                            src="{{ asset('storage/images/' . $category->image) }}"
+                                            alt="">
+                                        <div>
+                                            <h2 class="text-sm font-medium text-gray-800 dark:text-white ">
+                                                {{ $category->name }}
+                                            </h2>
+
+                                        </div>
+                                    </div>
                                 </td>
                                 <td class="px-4 py-3 text-xs">
 
                                     <span class="px-2 py-1 font-semibold leading-tight rounded-full">
-                    
-                                    </span>
+                                        {{ $category->description }}
 
-                                </td>
-                                <td class="px-4 py-3 text-xs">
-
-                                    <span class="px-2 py-1 font-semibold leading-tight rounded-full">
-                                        {{-- $Category->user->name  --}}
                                     </span>
 
                                 </td>
@@ -67,7 +63,7 @@ Categories
 
                                 <td class="px-4 py-3">
                                     <div class="flex items-center space-x-4 text-sm">
-                                        <a href="">
+                                        <a href="{{ route('category.edit',[$category->id] )}}">
                                             <button
                                                 class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
                                                 aria-label="Edit">
@@ -80,10 +76,11 @@ Categories
                                             </button>
                                         </a>
 
-                                        <form action="" method="POST">
+                                        <form action="{{ Route('category.destroy',$category) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" onclick="return confirm('Do you really want to Delete ?');"
+                                            <button type="submit"
+                                                onclick="return confirm('Do you really want to Delete ?');"
                                                 class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
                                                 aria-label="Delete">
                                                 <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
@@ -99,13 +96,18 @@ Categories
                                     </div>
                                 </td>
                             </tr>
-  
+                        @endforeach
+
                     </tbody>
                 </table>
 
             </div>
         </div>
+        <div class="mt-4">
+            {{ $categories->links() }}
+        </div>
     </main>
+
 @endsection
 
 @section('scripts')
