@@ -47,10 +47,12 @@ class OrganizerProfile extends Controller
     public function store(StoreEventRequest $request)
     {
         $data = $request->validated();
+
         $data['availableSeats'] = $data['capacity'];
         $fileName = time() . $request->name . '.' . $request->image->extension();
         $request->image->storeAs('public/images', $fileName);
         $data['image'] = $fileName;
+        // dd($data);
 
         $event = Event::create($data);
 
