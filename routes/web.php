@@ -74,3 +74,6 @@ Route::get('/event/{event}/show', [EventController::class,'ShowEvent'])->name('e
 Route::get('/events', [EventController::class,'fetchEvents'])->name('event.all');
 
 Route::get('/profile', [OrganizerProfile::class,'index'])->name('profile.index');
+
+Route::get('create/organizerevent', [OrganizerProfile::class,'create'])->name('create.event');
+Route::post('store/event', [OrganizerProfile::class,'store'])->name('store.event');

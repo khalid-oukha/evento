@@ -24,6 +24,7 @@ return new class extends Migration
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->unsignedBigInteger('organizer_id');
             $table->foreign('organizer_id')->references('user_id')->on('organizers')->onDelete('cascade');
+            $table->enum('reservation_type', ['auto', 'manual'])->default('auto');
             $table->timestamps();
         });
     }

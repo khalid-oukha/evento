@@ -31,6 +31,7 @@ class StoreEventRequest extends FormRequest
             'category_id' => 'required|exists:categories,id',
             'organizer_id' => 'required',
             'availableSeats' => 'integer',
+            'reservation_type' => 'string|max:255',
 
         ];
     }

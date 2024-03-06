@@ -178,7 +178,7 @@
         </div>
         <div class="relative customgradient z-50 flex justify-center py-8 items-center">
             <div>
-                <a href="#_" class="relative px-8 py-2 font-medium text-white group">
+                <a href="{{ route('event.all') }}" class="relative px-8 py-2 font-medium text-white group">
                     <span
                         class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-orange-500 group-hover:bg-primary-100 group-hover:skew-x-12"></span>
                     <span

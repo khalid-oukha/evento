@@ -24,7 +24,7 @@
 
                 <!-- profile meta -->
                 <div class="w-8/12 md:w-7/12 ml-4">
-                    <div class="md:flex md:flex-wrap md:items-center mb-4">
+                    <div class="md:flex flex justify-between md:flex-wrap md:items-center mb-4">
                         <h2 class="text-3xl text-gray-100 inline-block font-light md:mr-2 mb-2 sm:mb-0">
                             {{ auth()->user()->firstname . '_' . auth()->user()->lastname }}
                         </h2>
@@ -40,10 +40,14 @@
                         </span>
 
                         <!-- follow button -->
-                        <a href="#"
-                            class="bg-blue-500 px-2 py-1 
-                                text-gray-200 font-semibold text-sm rounded block text-center 
-                          sm:inline-block ">Follow</a>
+                        <a href="{{ route('create.event') }}"
+                            class='w-11 h-11 mt-3 flex justify-end  bg-indigo-500 rounded-full flex items-center justify-center cursor-pointer transition-all duration-500  hover:bg-indigo-700'>
+                            <svg width='10' height='10' viewBox='0 0 10 10' fill='none'
+                                xmlns='http://www.w3.org/2000/svg'>
+                                <path d='M1.22229 5.00019H8.77785M5.00007 8.77797V1.22241' stroke='white' stroke-width='1.6'
+                                    stroke-linecap='round' stroke-linejoin='round'></path>
+                            </svg>
+                        </a>
                     </div>
 
                     <!-- post, following, followers list for medium screens -->
@@ -89,7 +93,7 @@
                         <h6 class="text-4xl text-gray-100 font-bold text-deep-purple-accent-400">{{ $total_events }}</h6>
                         <p class="mb-2 text-gray-200 font-bold text-md">Total Events</p>
                         <p class="text-gray-400">
-                            Total published Events  : {{ $total_approved_events }}
+                            Total published Events : {{ $total_approved_events }}
                         </p>
                     </div>
                     <div class="text-center">
@@ -101,10 +105,11 @@
                                     points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
                             </svg>
                         </div>
-                        <h6 class="text-4xl text-gray-100 font-bold text-deep-purple-accent-400">{{ $total_reservations }}</h6>
-                        <p class="mb-2 text-gray-200 font-bold text-md">Users</p>
+                        <h6 class="text-4xl text-gray-100 font-bold text-deep-purple-accent-400">{{ $total_reservations }}
+                        </h6>
+                        <p class="mb-2 text-gray-200 font-bold text-md">All time reservations</p>
                         <p class="text-gray-400">
-                                the Percentage Of reservation By TOTAL Capacity Is {{ $PercentageOfReservations . '%' }}
+                            the Percentage Of reservation Is {{ $PercentageOfReservations . '%' }}
                         </p>
                     </div>
                     <div class="text-center">
@@ -183,58 +188,57 @@
                     </li>
 
                 </ul>
-                <!-- flexbox grid -->
-                <div class="flex flex-wrap -mx-px md:-mx-3">
 
-                    <!-- column -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8 max-md:max-w-lg mx-auto">
+                <!-- column -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8 max-md:max-w-lg mx-auto">
 
-                        @foreach ($events as $event)
-                            <div
-                                class="bg-gray-500 mb-6 mx-2 cursor-pointer rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative group">
-                                <a href="{{ route('event.details', $event->id) }}">
-                                    <img src="{{ asset('storage/images/' . $event->image) }}" alt="Blog Post 1"
-                                        class="w-full h-96 object-cover" />
-                                </a>
-                                @if ($event->status == 'pending')
-                                    <div class="p-6 absolute bottom-0 left-0 right-0 bg-white opacity-90">
-                                        <span
-                                            class="text-sm block text-gray-600 mb-2">{{ \Carbon\Carbon::parse($event->date)->diffForHumans() }}
-                                            | BY
-                                            {{ $event->organizer->user->firstname . ' ' . $event->organizer->user->lastname }}</span>
-                                        <h3 class="text-xl font-bold text-[#333]">{{ $event->title }}</h3>
-                                        <div
-                                            class="h-0 overflow-hidden group-hover:h-16 group-hover:mt-4 transition-all duration-300">
-                                            <p class="text-gray-600 text-sm">{{ $event->description }}</p>
-                                        </div>
-
+                    @foreach ($events as $event)
+                        <div
+                            class="bg-gray-500 mb-6 mx-2 cursor-pointer rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative group">
+                            <a href="{{ route('event.details', $event->id) }}">
+                                <img src="{{ asset('storage/images/' . $event->image) }}" alt="Blog Post 1"
+                                    class="w-full h-96 object-cover" />
+                            </a>
+                            @if ($event->status == 'pending')
+                                <div class="p-6 absolute bottom-0 left-0 right-0 bg-white opacity-90">
+                                    <span
+                                        class="text-sm block text-gray-600 mb-2">{{ \Carbon\Carbon::parse($event->date)->diffForHumans() }}
+                                        | BY
+                                        {{ $event->organizer->user->firstname . ' ' . $event->organizer->user->lastname }}</span>
+                                    <h3 class="text-xl font-bold text-[#333]">{{ $event->title }}</h3>
+                                    <div
+                                        class="h-0 overflow-hidden group-hover:h-16 group-hover:mt-4 transition-all duration-300">
+                                        <p class="text-gray-600 text-sm">{{ $event->description }}</p>
                                     </div>
-                                @elseif ($event->status == 'active')
-                                    <div class="p-6 absolute bottom-0 left-0 right-0 bg-green-600 opacity-90">
-                                        <span
-                                            class="text-sm block text-gray-100 mb-2">{{ \Carbon\Carbon::parse($event->date)->diffForHumans() }}
-                                            | BY
-                                            {{ $event->organizer->user->firstname . ' ' . $event->organizer->user->lastname }}</span>
-                                        <h3 class="text-xl font-bold text-gray-100">{{ $event->title }}</h3>
-                                        <div
-                                            class="h-0 overflow-hidden group-hover:h-16 group-hover:mt-4 transition-all duration-300">
-                                            <p class="text-gray-300 text-sm">{{ $event->description }}</p>
-                                        </div>
-                                        <span class="text-sm block text-gray-300 mb-2"> | Total Reservations :
-                                            {{ $event->reservations_count }}
-                                        </span>
-                                        <span class="text-sm block text-gray-300 mb-2">
-                                            | Avaliable Seats :
-                                            {{ $event->availableSeats }}
-                                        </span>
-                                    </div>
-                                @endif
-                            </div>
-                        @endforeach
-                    </div>
 
+                                </div>
+                            @elseif ($event->status == 'active')
+                                <div class="p-6 absolute bottom-0 left-0 right-0 bg-green-600 opacity-90">
+                                    <span
+                                        class="text-sm block text-gray-100 mb-2">{{ \Carbon\Carbon::parse($event->date)->diffForHumans() }}
+                                        | BY
+                                        {{ $event->organizer->user->firstname . ' ' . $event->organizer->user->lastname }}</span>
+                                    <h3 class="text-xl font-bold text-gray-100">{{ $event->title }}</h3>
+                                    <div
+                                        class="h-0 overflow-hidden group-hover:h-16 group-hover:mt-4 transition-all duration-300">
+                                        <p class="text-gray-300 text-sm">{{ $event->description }}</p>
+                                    </div>
+                                    <span class="text-sm block text-gray-300 mb-2"> | Total Reservations :
+                                        {{ $event->reservations_count }}
+                                    </span>
+                                    <span class="text-sm block text-gray-300 mb-2">
+                                        | Avaliable Seats :
+                                        {{ $event->availableSeats }}
+                                    </span>
+                                </div>
+                            @endif
+                        </div>
+                    @endforeach
                 </div>
+
+
             </div>
+        </div>
         </div>
     </main>
 @endsection

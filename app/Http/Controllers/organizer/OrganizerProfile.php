@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\organizer;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreEventRequest;
+use App\Models\Category;
+use App\Models\Event;
 use Illuminate\Http\Request;
 
 class OrganizerProfile extends Controller
@@ -36,5 +39,27 @@ class OrganizerProfile extends Controller
         return view("front.profile.profile",compact("events","total_events","total_approved_events","total_reservations","PercentageOfReservations"));
     }
 
+    public function create()
+    {
+        $categories = Category::all();
+        return view("front.profile.create",compact("categories"));
+    }
+    public function store(StoreEventRequest $request)
+    {
+        $data = $request->validated();
+        $data['availableSeats'] = $data['capacity'];
+        $fileName = time() . $request->name . '.' . $request->image->extension();
+        $request->image->storeAs('public/images', $fileName);
+        $data['image'] = $fileName;
+
+        $event = Event::create($data);
+
+        if ($event) {
+            return redirect()->route('profile.index')->with('success', 'Event created successfully.');
+        } else {
+            return back()->withInput()->with('error', 'Failed to create the category.');
+        }
+    }
+    
     
 }
