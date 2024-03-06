@@ -9,6 +9,7 @@ use App\Http\Controllers\Categories\CategoryController;
 use App\Http\Controllers\event\EventController;
 use App\Http\Controllers\home\UpcomingEventsController;
 use App\Http\Controllers\organizer\OrganizerController;
+use App\Http\Controllers\organizer\OrganizerProfile;
 use App\Http\Controllers\StatisticsController;
 use Illuminate\Support\Facades\Route;
 
@@ -71,3 +72,5 @@ Route::get('/', [UpcomingEventsController::class,'index'])->name('home');
 Route::get('/event/{event}/show', [EventController::class,'ShowEvent'])->name('event.details');
 
 Route::get('/events', [EventController::class,'fetchEvents'])->name('event.all');
+
+Route::get('/profile', [OrganizerProfile::class,'index'])->name('profile.index');
