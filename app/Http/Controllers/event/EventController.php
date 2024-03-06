@@ -59,7 +59,8 @@ class EventController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $event = Event::find($id);
+        return view('back.events.show', compact(''));
     }
 
     /**
@@ -105,5 +106,17 @@ class EventController extends Controller
 
         return redirect()->route('event.index')->with('success', 'Event activated successfully.');
 
+    }
+
+    public function fetchEvents()
+    {
+        $events = Event::paginate(10);
+        return view('front.events.events', compact('events'));
+    }
+
+    public function ShowEvent($eventId)
+    {
+        $event = Event::findOrFail($eventId);
+        return view('front.events.details', compact('event'));
     }
 }

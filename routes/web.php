@@ -68,3 +68,6 @@ Route::get('/events/{eventId}/cancel', [EventController::class, 'cancelEvent'])-
 
 // home Routes...
 Route::get('/', [UpcomingEventsController::class,'index'])->name('home');
+Route::get('/event/{event}/show', [EventController::class,'ShowEvent'])->name('event.details');
+
+Route::get('/events', [EventController::class,'fetchEvents'])->name('event.all');
