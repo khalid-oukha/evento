@@ -86,8 +86,8 @@
                                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Type Of
                                             Reservation</label>
                                         <select name="reservation_type" class="border p-2 rounded w-full">
-                                            <option selected value="auto">Validate Reservations By your self</option>
-                                            <option value="manual">Auto Validation for Reservations</option>
+                                            <option selected value="manual">Validate Reservations By your self</option>
+                                            <option value="auto">Auto Validation for Reservations</option>
                                         </select>
 
                                     </div>

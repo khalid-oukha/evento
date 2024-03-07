@@ -13,7 +13,9 @@ class OrganizerProfile extends Controller
     public function index()
     {
         $organizer = auth()->user()->organizer;
-        $events = $organizer->events()->withCount('reservations')->get();
+        $events = $organizer->events()->whereIn('status', ['active', 'pending'])
+        ->orderByRaw("FIELD(status, 'active') DESC")
+        ->withCount('reservations')->paginate(8);
 
         $total_reservations = 0;
         $totalCapacity = 0;
@@ -25,6 +27,7 @@ class OrganizerProfile extends Controller
             $totalCapacity = $totalCapacity + $event->capacity;
             $total_reservations = $total_reservations +  $event->reservations_count;
             $available_seats = $event->capacity - $event->reservations_count;
+
             $event->update([
                 'availableSeats' => $available_seats
             ]); 
@@ -34,6 +37,7 @@ class OrganizerProfile extends Controller
             $PercentageOfReservations = ($total_reservations / $totalCapacity) * 100;
         }
         
+        $PercentageOfReservations = round($PercentageOfReservations, 2); // ciel 0.1 -> 1  0.5 
         $total_events = $organizer->events->count();
         $total_approved_events = $organizer->events->where('status','active')->count();
         return view("front.profile.profile",compact("events","total_events","total_approved_events","total_reservations","PercentageOfReservations"));

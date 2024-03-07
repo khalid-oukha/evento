@@ -155,7 +155,7 @@
                                             class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-orange-200 -rotate-12"></span>
                                         <span class="relative">View More</span>
                                     </a>
-                                    <a href="#_" class="relative px-6 py-2 font-medium text-white group">
+                                    <a href="{{ Route('booking.event',$event->id) }}" class="relative px-6 py-2 font-medium text-white group">
                                         <span
                                             class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-primary-300 group-hover:bg-primary-100 group-hover:skew-x-12"></span>
                                         <span

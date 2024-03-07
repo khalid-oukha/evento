@@ -71,13 +71,13 @@ class User extends Authenticatable
 
     public function reservations()
     {
-        return $this->hasMany(Reservation::class);
+        return $this->hasOne(Reservation::class);
     }
 
-    public function reservedEvents()
-    {
-        return $this->belongsToMany(Event::class, 'reservations')->withPivot('number_of_seats', 'status');
-    }
+    // public function reservedEvents()
+    // {
+    //     return $this->belongsToMany(Event::class, 'reservations')->withPivot('number_of_seats', 'status');
+    // }
 
     public function tickets()
     {

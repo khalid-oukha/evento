@@ -33,4 +33,23 @@ class Event extends Model
     }
 
 
+    public function CheckIfReservationExist($user, $event_id)
+    {
+        $userReservation = $user->reservations()->where('event_id', $event_id)->first();
+        if ($userReservation) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public function CheckIfAvaliableSeats($event, $user)
+    {
+        $available_seats = $event->capacity - $event->reservations->where('status', 'confirmed')->count();
+        if ($available_seats > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

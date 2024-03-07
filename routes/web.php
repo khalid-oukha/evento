@@ -8,10 +8,14 @@ use App\Http\Controllers\backoffice\CoachController;
 use App\Http\Controllers\Categories\CategoryController;
 use App\Http\Controllers\event\EventController;
 use App\Http\Controllers\home\UpcomingEventsController;
+use App\Http\Controllers\Organizer\EventReservationController;
 use App\Http\Controllers\organizer\OrganizerController;
 use App\Http\Controllers\organizer\OrganizerProfile;
+use App\Http\Controllers\ReservationsController;
 use App\Http\Controllers\StatisticsController;
+use App\Models\Reservation;
 use Illuminate\Support\Facades\Route;
+
 
 
 
@@ -71,9 +75,15 @@ Route::get('/events/{eventId}/cancel', [EventController::class, 'cancelEvent'])-
 Route::get('/', [UpcomingEventsController::class,'index'])->name('home');
 Route::get('/event/{event}/show', [EventController::class,'ShowEvent'])->name('event.details');
 
+// all events Routes...
 Route::get('/events', [EventController::class,'fetchEvents'])->name('event.all');
 
+// profile Routes...
 Route::get('/profile', [OrganizerProfile::class,'index'])->name('profile.index');
-
 Route::get('create/organizerevent', [OrganizerProfile::class,'create'])->name('create.event');
 Route::post('store/event', [OrganizerProfile::class,'store'])->name('store.event');
+
+// Reservation Routes ...
+Route::get('/booking/{event}/event', [ReservationsController::class,'bookEvent'])->name('booking.event');
+
+Route::get('/organizer/{event}/reservations', [EventReservationController::class,'index'])->name('orangizer.reservations');
