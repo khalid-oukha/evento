@@ -30,7 +30,7 @@ class OrganizerProfile extends Controller
     }
 
 
-    public function calculateStatistics($events,Organizer $organizer)
+    public function calculateStatistics($events,$organizer)
     {
         $PercentageOfReservations = 0;
 

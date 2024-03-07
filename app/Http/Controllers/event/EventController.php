@@ -111,7 +111,8 @@ class EventController extends Controller
     public function fetchEvents()
     {
         $events = Event::paginate(8);
-        return view('front.events.events', compact('events'));
+        $categories = Category::all();
+        return view('front.events.events', compact('events','categories'));
     }
 
     public function ShowEvent($eventId)
