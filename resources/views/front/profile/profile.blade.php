@@ -91,10 +91,10 @@
                                     points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
                             </svg>
                         </div>
-                        <h6 class="text-4xl text-gray-100 font-bold text-deep-purple-accent-400">{{ $total_events }}</h6>
+                        <h6 class="text-4xl text-gray-100 font-bold text-deep-purple-accent-400">{{ $statistics['total_events'] }}</h6>
                         <p class="mb-2 text-gray-200 font-bold text-md">Total Events</p>
                         <p class="text-gray-400">
-                            Total published Events : {{ $total_approved_events }}
+                            Total published Events : {{ $statistics['total_approved_events'] }}
                         </p>
                     </div>
                     <div class="text-center">
@@ -106,11 +106,11 @@
                                     points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
                             </svg>
                         </div>
-                        <h6 class="text-4xl text-gray-100 font-bold text-deep-purple-accent-400">{{ $total_reservations }}
+                        <h6 class="text-4xl text-gray-100 font-bold text-deep-purple-accent-400">{{ $statistics['total_reservations'] }}
                         </h6>
                         <p class="mb-2 text-gray-200 font-bold text-md">All time reservations</p>
                         <p class="text-gray-400">
-                            the Percentage Of reservation Is <br> {{ $PercentageOfReservations . '%' }}
+                            the Percentage Of reservation Is <br> {{ $statistics['PercentageOfReservations'] . '%' }}
                         </p>
                     </div>
                     <div class="text-center">
