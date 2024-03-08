@@ -110,7 +110,7 @@ class EventController extends Controller
 
     public function fetchEvents()
     {
-        $events = Event::paginate(8);
+        $events = Event::where('status', 'active')->paginate(8);
         $categories = Category::all();
         return view('front.events.events', compact('events','categories'));
     }

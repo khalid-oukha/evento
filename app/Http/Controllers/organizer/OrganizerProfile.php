@@ -65,7 +65,7 @@ class OrganizerProfile extends Controller
         $fileName = time() . $request->name . '.' . $request->image->extension();
         $request->image->storeAs('public/images', $fileName);
         $data['image'] = $fileName;
-        dd($data);
+        // dd($data);
 
         $event = Event::create($data);
 
