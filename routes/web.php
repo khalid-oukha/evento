@@ -15,6 +15,7 @@ use App\Http\Controllers\organizer\ReservationsController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\StatisticsController;
 use App\Http\Controllers\StoreFiltersController;
+use App\Http\Controllers\UsersController;
 use App\Models\Reservation;
 use Illuminate\Support\Facades\Route;
 
@@ -111,6 +112,11 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     Route::get('/events/{eventId}/activate', [EventController::class, 'activateEvent'])->name('events.activate');
     Route::get('/events/{eventId}/cancel', [EventController::class, 'cancelEvent'])->name('events.cancel');
+
+    Route::resource('user', UsersController::class);
+    Route::post('/add-remove-role', [UsersController::class, 'addRemoveRole'])->name('add-remove-role');
+
+
 });
 
 

@@ -89,16 +89,16 @@ class User extends Authenticatable
     {
         return $this->roles()->where('name', 'admin')->exists();
     }
-    
+
     public function isOrganizer()
     {
         return $this->roles()->where('name', 'organizer')->exists();
     }
-    
+
     public function isSpectator()
     {
         return $this->roles()->where('name', 'spectator')->exists();
     }
 
-    
+
 }
