@@ -46,4 +46,5 @@ class LoginController extends Controller
     $this->userRepository->logout();
     return redirect('login');
   }
+  
 }

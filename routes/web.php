@@ -57,9 +57,13 @@ Route::get('reset/{token}', [ResetPasswordController::class, 'reset'])->name('pa
 Route::post('/reset', [ResetPasswordController::class, 'GetnewPassword'])->name('password.postReset');
 
 
-// dashboard Routes...
+// google Routes...
+Route::get('/google/redirect', [App\Http\Controllers\GoogleLoginController::class, 'redirectToGoogle'])->name('google.redirect');
+Route::get('/google/callback', [App\Http\Controllers\GoogleLoginController::class, 'handleGoogleCallback'])->name('google.callback');
 
 
+Route::get('auth/gmail', 'Auth\LoginController@redirectToGmail');
+Route::get('auth/gmail/callback', 'Auth\LoginController@handleGmailCallback');
 
 
 
