@@ -17,7 +17,8 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::paginate(5);
-        return view("back.categories.index", compact("categories"));
+        $total_categories = Category::Count();
+        return view("back.categories.index", compact("categories",'total_categories'));
     }
 
     /**
@@ -97,4 +98,6 @@ class CategoryController extends Controller
             return back()->withInput()->with('error', 'Failed to update the category.');
         }
     }
+
+
 }

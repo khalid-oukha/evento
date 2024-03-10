@@ -12,10 +12,75 @@
 @endsection
 
 @section('content')
+
+
     <section class="container px-24 pt-16 mx-auto">
         <h2 class="my-8 text-4xl font-semibold tracking-widest text-center text-gray-700 font-poppins dark:text-gray-200">
             <span class="text-primary-100 dark:text-orange">@yield('title_page') </span> - Managment
         </h2>
+
+        <div class="flex items-center bg-gray-100 dark:bg-gray-900">
+            <div class="container max-w-6xl px-5 mx-auto my-8">
+                <div class="grid gap-7 sm:grid-cols-2 lg:grid-cols-4">
+                    <div class="flex items-center justify-between p-5 bg-white rounded shadow-sm">
+                        <div>
+                            <div class="text-sm text-gray-400 ">Total Events</div>
+                            <div class="flex items-center pt-1">
+                                <div class="text-xl font-medium text-indigo-400 ">{{ $status_statistics['total_events'] }}</div>
+                            </div>
+                        </div>
+                        <div class="text-gray-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 51 51">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M48.875 12.75L28.687 32.938 18.063 22.312 2.126 38.25"></path>
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M36.125 12.75h12.75V25.5"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between p-5 bg-white rounded shadow-sm">
+                        <div>
+                            <div class="text-sm text-gray-400 ">Publiched Events</div>
+                            <div class="flex items-center pt-1">
+                                <div class="text-xl font-medium text-indigo-400 ">{{ $status_statistics['total_accepted_events'] }}</div>
+                            </div>
+                        </div>
+                        <div class="text-gray-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 47 46">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M41.536 30.456a19.21 19.21 0 01-5.675 7.4 19.771 19.771 0 01-8.557 3.937c-3.138.608-6.38.455-9.444-.447a19.673 19.673 0 01-8.129-4.725 19.1 19.1 0 01-4.92-7.902 18.775 18.775 0 01-.564-9.237 18.98 18.98 0 013.923-8.419 19.538 19.538 0 017.497-5.639"></path>
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M43.083 23c0-2.517-.506-5.01-1.49-7.335a19.142 19.142 0 00-4.246-6.218 19.617 19.617 0 00-6.353-4.155A19.953 19.953 0 0023.5 3.833V23h19.583z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between p-5 bg-white rounded shadow-sm">
+                        <div>
+                            <div class="text-sm text-gray-400 ">Total Cancelled Events</div>
+                            <div class="flex items-center pt-1">
+                                <div class="text-xl font-medium text-indigo-400">{{ $status_statistics['total_cancelled_events'] }}</div>
+                            </div>
+                        </div>
+                        <div class="text-gray-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 47 46">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M41.536 30.456a19.21 19.21 0 01-5.675 7.4 19.771 19.771 0 01-8.557 3.937c-3.138.608-6.38.455-9.444-.447a19.673 19.673 0 01-8.129-4.725 19.1 19.1 0 01-4.92-7.902 18.775 18.775 0 01-.564-9.237 18.98 18.98 0 013.923-8.419 19.538 19.538 0 017.497-5.639"></path>
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M43.083 23c0-2.517-.506-5.01-1.49-7.335a19.142 19.142 0 00-4.246-6.218 19.617 19.617 0 00-6.353-4.155A19.953 19.953 0 0023.5 3.833V23h19.583z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between p-5 bg-white rounded shadow-sm">
+                        <div>
+                            <div class="text-sm text-gray-400 ">Events with pending status</div>
+                            <div class="flex items-center pt-1">
+                                <div class="text-xl font-medium text-indigo-400 ">{{ $status_statistics['total_pending_events'] }}</div>
+                            </div>
+                        </div>
+                        <div class="text-gray-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 47 46">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M41.536 30.456a19.21 19.21 0 01-5.675 7.4 19.771 19.771 0 01-8.557 3.937c-3.138.608-6.38.455-9.444-.447a19.673 19.673 0 01-8.129-4.725 19.1 19.1 0 01-4.92-7.902 18.775 18.775 0 01-.564-9.237 18.98 18.98 0 013.923-8.419 19.538 19.538 0 017.497-5.639"></path>
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M43.083 23c0-2.517-.506-5.01-1.49-7.335a19.142 19.142 0 00-4.246-6.218 19.617 19.617 0 00-6.353-4.155A19.953 19.953 0 0023.5 3.833V23h19.583z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <a href="{{ route('event.create') }}"
             class="px-8 py-2 my-8 text-gray-100 transition-colors rounded bg-orange customgradient hover:bg-orange-100 focus:outline-none">
             Add an event
