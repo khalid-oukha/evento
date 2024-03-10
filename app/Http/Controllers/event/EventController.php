@@ -118,6 +118,11 @@ class EventController extends Controller
     public function ShowEvent($eventId)
     {
         $event = Event::findOrFail($eventId);
+        $user = auth()->user();
+        if (!$event->CheckIfReservationExist($user, $event->id)) {
+            $alreadyReserved = true;
+            session(["alreadyReserved" => $alreadyReserved]);
+        }
         return view('front.events.details', compact('event'));
     }
 }

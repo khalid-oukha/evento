@@ -12,16 +12,16 @@
 @endsection
 
 @section('content')
-    <section class="container pt-16 px-24 mx-auto">
-        <h2 class="my-8 text-4xl font-semibold text-center font-poppins tracking-widest text-gray-700 dark:text-gray-200">
+    <section class="container px-24 pt-16 mx-auto">
+        <h2 class="my-8 text-4xl font-semibold tracking-widest text-center text-gray-700 font-poppins dark:text-gray-200">
             <span class="text-primary-100 dark:text-orange">@yield('title_page') </span> - Managment
         </h2>
         <a href="{{ route('event.create') }}"
-            class="px-8 py-2 my-8 bg-orange rounded customgradient  text-gray-100 hover:bg-orange-100 focus:outline-none transition-colors">
+            class="px-8 py-2 my-8 text-gray-100 transition-colors rounded bg-orange customgradient hover:bg-orange-100 focus:outline-none">
             Add an event
         </a>
 
-        <div class="flex py-8 flex-col">
+        <div class="flex flex-col py-8">
             <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
                     <div class="overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg">
@@ -102,11 +102,11 @@
                                                 <div class="flex items-center gap-x-2">
                                                     <img class="object-cover w-8 h-8 rounded-full"
                                                         src="{{ asset('storage/images/' . $event->image) }}" alt="">
-                                                    <div>
-                                                        <h2 class="text-sm font-medium text-gray-800 dark:text-white ">
-                                                            {{ $event->title }}
-                                                        </h2>
-                                                    </div>
+                                                        <div>
+                                                            <h2 class="text-sm font-medium text-gray-800 dark:text-white ">
+                                                                {{ \Illuminate\Support\Str::words($event->title, 3, '...') }}
+                                                            </h2>
+                                                        </div>
                                                 </div>
                                             </div>
                                         </td>
@@ -148,7 +148,7 @@
                                                 </div>
                                             @elseif ($event->status == 'pending')
                                                 <div
-                                                    class="inline-flex items-center px-3 py-1 rounded-full gap-x-2 text-black bg-gray-200 dark:bg-gray-800">
+                                                    class="inline-flex items-center px-3 py-1 text-black bg-gray-200 rounded-full gap-x-2 dark:bg-gray-800">
                                                     <h2 class="text-sm font-normal">{{ $event->status }}</h2>
                                                 </div>
                                             @endif
@@ -191,7 +191,7 @@
                                                 </a>
                                                 <a href="{{ route('events.cancel',$event->id) }}">
                                                     <div
-                                                        class="inline-flex items-center px-1 py-1 rounded-full gap-x-2 text-red-500 bg-red-100/60 dark:bg-gray-800">
+                                                        class="inline-flex items-center px-1 py-1 text-red-500 rounded-full gap-x-2 bg-red-100/60 dark:bg-gray-800">
                                                         <button
                                                             class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-red-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
                                                             aria-label="Edit">

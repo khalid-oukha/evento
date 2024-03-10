@@ -15,6 +15,7 @@ use App\Http\Controllers\organizer\ReservationsController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\StatisticsController;
 use App\Http\Controllers\StoreFiltersController;
+use App\Http\Controllers\TicketController;
 use App\Http\Controllers\UsersController;
 use App\Models\Reservation;
 use Illuminate\Support\Facades\Route;
@@ -97,10 +98,11 @@ Route::middleware(['auth', 'organizer'])->group(function () {
     Route::get('/reservations/{reservations}/cancel', [EventReservationController::class, 'cancelReservation'])->name('reservation.cancel');
 
     // profile Routes...
-    Route::get('/profile', [OrganizerProfile::class, 'index'])->name('profile.index');
     Route::get('create/organizerevent', [OrganizerProfile::class, 'create'])->name('create.event');
     Route::post('store/event', [OrganizerProfile::class, 'store'])->name('store.event');
 });
+
+Route::get('/profile', [OrganizerProfile::class, 'index'])->name('profile.index');
 
 
 Route::middleware(['auth', 'admin'])->group(function () {
@@ -122,4 +124,5 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/booking/{event}/event', [ReservationsController::class, 'bookEvent'])->name('booking.event');
+    Route::get('/ticket/{reservation}/ticket', [TicketController::class,'createTicket'])->name('generate.ticket');
 });
