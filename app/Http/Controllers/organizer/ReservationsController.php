@@ -16,15 +16,13 @@ class ReservationsController extends Controller
         $user = auth()->user();
 
 
-        $alreadyReserved = false;
+
 
         if (!$event) {
             return redirect()->back()->with("error", "The event is not exist");
         }
 
         if (!$event->CheckIfReservationExist($user, $event->id)) {
-            $alreadyReserved = true;
-            session(["alreadyReserved" => $alreadyReserved]);
             return redirect()->back()->with("error", "Event already bookd ");
         }
 
