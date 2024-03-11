@@ -42,7 +42,7 @@ class EventController extends Controller
     public function index()
     {
         $events = Event::paginate(10);
-        $status_statistics = $this->AdminStatistics(); 
+        $status_statistics = $this->AdminStatistics();
         return view('back.events.index', compact('events', 'status_statistics'));
     }
 
@@ -146,9 +146,9 @@ class EventController extends Controller
     {
         $event = Event::findOrFail($eventId);
         $user = auth()->user();
-        $alreadyReserved = $event->CheckIfReservationExist($user, $event->id);
+        // $alreadyReserved = $event->CheckIfReservationExist($user, $event->id);
 
-        return view('front.events.details', compact('event','alreadyReserved'));
+        return view('front.events.details', compact('event',));
     }
 
 

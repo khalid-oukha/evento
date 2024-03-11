@@ -8,63 +8,63 @@
 @endsection
 
 @section('content')
-    <main class="  relative overflow-hidden  w-full h-full ">
-        <img class="absolute inset-0  object-cover w-full h-full" src="{{ asset('assets/images/section4.jpg') }}"
+    <main class="relative w-full h-full overflow-hidden ">
+        <img class="absolute inset-0 object-cover w-full h-full" src="{{ asset('assets/images/section4.jpg') }}"
             alt="" srcset="">
-        <div class="px-4 sm:px-6 customgradient lg:px-8  dark:bg-gray-800 flex relative z-20 items-center overflow-hidden">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:flex relative">
-                <div class="sm:w-2/3 lg:w-1/2 sm:flex flex-col sm:relative z-50">
-                    <span class="w-16 h-2 bg-orange-100 dark:bg-white mb-4 sm:mb-6"></span>
+        <div class="relative z-20 flex items-center px-4 overflow-hidden sm:px-6 customgradient lg:px-8 dark:bg-gray-800">
+            <div class="container relative px-4 pt-12 mx-auto sm:px-6 lg:px-8 sm:flex">
+                <div class="z-50 flex-col sm:w-2/3 lg:w-1/2 sm:flex sm:relative">
+                    <span class="w-16 h-2 mb-4 bg-orange-100 dark:bg-white sm:mb-6"></span>
                     <h1
-                        class="font-bebas-neue uppercase text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black flex flex-col leading-tight dark:text-white text-white mb-4 sm:mb-6">
+                        class="flex flex-col mb-4 text-4xl font-black leading-tight text-white uppercase font-bebas-neue sm:text-5xl md:text-6xl lg:text-7xl dark:text-white sm:mb-6">
                         Elevate Your Fitness Journey WITH events
-                        <span class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-orange-100">
+                        <span class="text-3xl text-orange-100 sm:text-4xl md:text-5xl lg:text-6xl">
                             EasyEVENT
                         </span>
                     </h1>
-                    <p class="text-sm sm:text-base text-white dark:text-white mb-6 sm:mb-8">
+                    <p class="mb-6 text-sm text-white sm:text-base dark:text-white sm:mb-8">
                         Unleash the best version of yourself at EasyEVENT events. Our state-of-the-art facilities, expert
                         trainers, and vibrant community are here to inspire and guide you on your fitness journey.
                     </p>
-                    <div class="flex flex-col sm:flex-row items-start sm:items-center">
+                    <div class="flex flex-col items-start sm:flex-row sm:items-center">
                         <a href="#"
-                            class="uppercase py-2 px-4 rounded-lg bg-orange-100 border-2 border-transparent text-white text-md mr-0 sm:mr-4 mb-2 sm:mb-0 hover:bg-pink-400">
+                            class="px-4 py-2 mb-2 mr-0 text-white uppercase bg-orange-100 border-2 border-transparent rounded-lg text-md sm:mr-4 sm:mb-0 hover:bg-pink-400">
                             Get started
                         </a>
                         <a href="#"
-                            class="uppercase py-2 px-4 rounded-lg bg-transparent border-2 border-orange-100 text-orange-100 dark:text-white hover:bg-pink-500 hover:text-white text-md">
+                            class="px-4 py-2 text-orange-100 uppercase bg-transparent border-2 border-orange-100 rounded-lg dark:text-white hover:bg-pink-500 hover:text-white text-md">
                             Read more
                         </a>
                     </div>
                 </div>
-                <div class="hidden lg:block  lg:w-3/5 relative">
-                    <img src="{{ asset('assets/images/hero1.png') }}" class="w-full  m-auto" />
+                <div class="relative hidden lg:block lg:w-3/5">
+                    <img src="{{ asset('assets/images/hero1.png') }}" class="w-full m-auto" />
                 </div>
             </div>
         </div>
     </main>
 
 
-    <section class="relative overflow-hidden w-full h-full">
+    <section class="relative w-full h-full overflow-hidden">
         <img class="absolute top-0 left-0 object-cover w-full h-full" src="{{ asset('assets/images/section3.jpg') }}"
             alt="Background Image">
-        <div class="flex relative z-50 h-full items-center justify-center customgradient  px-8 dark:bg-gray-800">
-            <div class="container mx-auto flex flex-wrap items-start">
+        <div class="relative z-50 flex items-center justify-center h-full px-8 customgradient dark:bg-gray-800">
+            <div class="container flex flex-wrap items-start mx-auto">
                 <div class="w-full lg:w-2/5">
-                    <img src="{{ asset('assets/images/aboutimg.png') }}" alt="Violinist" class="w-full inset-0 lg:max-w-lg"
+                    <img src="{{ asset('assets/images/aboutimg.png') }}" alt="Violinist" class="inset-0 w-full lg:max-w-lg"
                         style="transform: translateY(0%);">
                 </div>
-                <div class="w-full lg:w-3/5 px-6 text-center lg:text-left">
+                <div class="w-full px-6 text-center lg:w-3/5 lg:text-left">
                     <div class="py-12">
-                        <span class="w-20 h-2 bg-orange-100 dark:bg-white mb-12 inline-block"></span>
+                        <span class="inline-block w-20 h-2 mb-12 bg-orange-100 dark:bg-white"></span>
                         <h2
-                            class="font-bebas-neue uppercase text-4xl sm:text-4xl font-black leading-none dark:text-white text-white">
+                            class="text-4xl font-black leading-none text-white uppercase font-bebas-neue sm:text-4xl dark:text-white">
                             About EasyEVENT events
-                            <span class="text-4xl sm:text-4xl text-orange-100">
+                            <span class="text-4xl text-orange-100 sm:text-4xl">
                                 EasyEVENT
                             </span>
                         </h2>
-                        <p class="text-sm sm:text-base text-white dark:text-white py-4">
+                        <p class="py-4 text-sm text-white sm:text-base dark:text-white">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore necessitatibus ut odit
                             corrupti sint optio neque dolorum itaque quasi nisi ipsam incidunt at voluptates, possimus,
                             repellat nihil provident! Ut, officia. Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -86,7 +86,7 @@
                         </p>
                         <div class="mt-8">
                             <a href="#"
-                                class="uppercase py-2 px-4 rounded-lg bg-transparent border-2 border-orange-100 text-orange-100 dark:text-white hover:bg-pink-500 hover:text-white text-md">
+                                class="px-4 py-2 text-orange-100 uppercase bg-transparent border-2 border-orange-100 rounded-lg dark:text-white hover:bg-pink-500 hover:text-white text-md">
                                 About us
                             </a>
                         </div>
@@ -97,29 +97,29 @@
     </section>
 
 
-    <section class=" customgradient w-full h-full  relative overflow-hidden ">
+    <section class="relative w-full h-full overflow-hidden  customgradient">
 
-        <img class="absolute inset-0  object-cover w-full h-full" src="{{ asset('assets/images/section3.jpg') }}"
+        <img class="absolute inset-0 object-cover w-full h-full" src="{{ asset('assets/images/section3.jpg') }}"
             alt="" srcset="">
-        <h2 class="flex justify-center customgradient relative font-bold text-4xl text-white  py-5 z-50"> UpComing Events
+        <h2 class="relative z-50 flex justify-center py-5 text-4xl font-bold text-white customgradient"> UpComing Events
         </h2>
-        <div class="flex relative z-50 customgradient items-center w-full h-full justify-center overflow-hidden">
+        <div class="relative z-50 flex items-center justify-center w-full h-full overflow-hidden customgradient">
 
-            <div class="grid grid-cols-1 z-50 lg:w-3/4 gap-5 lg:grid-cols-3 lg:gap-10  ">
+            <div class="z-50 grid grid-cols-1 gap-5 lg:w-3/4 lg:grid-cols-3 lg:gap-10 ">
                 @foreach ($events as $event)
                     <div class="">
-                        <div class="max-w-sm  shadow-lg rounded-lg overflow-hidden my-4">
-                            <img class="w-full h-56 object-cover object-center"
+                        <div class="max-w-sm my-4 overflow-hidden rounded-lg shadow-lg">
+                            <img class="object-cover object-center w-full h-56"
                                 src="{{ asset('storage/images/' . $event->image) }}" alt="avatar">
 
-                            <div class="py-4  px-6">
+                            <div class="px-6 py-4">
                                 <h3 class="text-2xl font-semibold text-gray-100">{{ $event->title }}</h3>
-                                <h3 class="text-1xl font-semibold text-gray-300">Organizer : <span
+                                <h3 class="font-semibold text-gray-300 text-1xl">Organizer : <span
                                         class="py-2 font-semibold text-primary-300">{{ $event->organizer->user->firstname . ' ' . $event->organizer->user->lastname }}</span>
                                 </h3>
 
                                 <div class="flex items-center mt-4 text-gray-100">
-                                    <svg class="h-6 w-6 fill-current" viewBox="0 0 512 512">
+                                    <svg class="w-6 h-6 fill-current" viewBox="0 0 512 512">
                                         <path
                                             d="M239.208 343.937c-17.78 10.103-38.342 15.876-60.255 15.876-21.909 0-42.467-5.771-60.246-15.87C71.544 358.331 42.643 406 32 448h293.912c-10.639-42-39.537-89.683-86.704-104.063zM178.953 120.035c-58.479 0-105.886 47.394-105.886 105.858 0 58.464 47.407 105.857 105.886 105.857s105.886-47.394 105.886-105.857c0-58.464-47.408-105.858-105.886-105.858zm0 186.488c-33.671 0-62.445-22.513-73.997-50.523H252.95c-11.554 28.011-40.326 50.523-73.997 50.523z" />
                                         <g>
@@ -143,7 +143,7 @@
                                     <span class="px-3 font-semibold text-gray-100">{{ $event->category->name }}</span>
 
                                 </div>
-                                <div class="flex items-center mt-4 justify-between text-gray-100">
+                                <div class="flex items-center justify-between mt-4 text-gray-100">
                                     <a href="{{ route('event.details',$event->id) }}" class="relative px-6 py-2 font-medium text-white group">
                                         <span
                                             class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-gray-500 group-hover:bg-primary-100 group-hover:skew-x-12"></span>
@@ -176,7 +176,7 @@
 
             </div>
         </div>
-        <div class="relative customgradient z-50 flex justify-center py-8 items-center">
+        <div class="relative z-50 flex items-center justify-center py-8 customgradient">
             <div>
                 <a href="{{ route('event.all') }}" class="relative px-8 py-2 font-medium text-white group">
                     <span

@@ -150,6 +150,7 @@
                     <img src="{{ asset('storage/images/' . $event->image) }}" alt="Blog Post 1"
                         class="object-cover w-full h-96" />
                 </a>
+
                 @if ($event->status == 'pending')
                     <div class="absolute bottom-0 left-0 right-0 p-6 bg-white opacity-90">
                         <span
@@ -160,7 +161,28 @@
                         <div class="h-0 overflow-hidden transition-all duration-300 group-hover:h-16 group-hover:mt-4">
                             <p class="text-sm text-gray-600">{{ $event->description }}</p>
                         </div>
+                        <div>
+                            <a href="{{ route('edit.event', $event->id) }}"
+                                class="inline-flex items-end px-1  py-1  text-orange-200 border rounded mr border-orang-100">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                                </svg>
+                            </a>
 
+                            <a href="{{ route('event.delete', $event->id) }}"
+                                class="inline-flex items-center px-1 py-1  text-orange-200 border rounded border-orang-100">
+                                <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                                        clip-rule="evenodd">
+                                    </path>
+                                </svg>
+                            </a>
+
+
+                        </div>
                     </div>
                 @elseif ($event->status == 'active')
                     <div class="absolute bottom-0 left-0 right-0 p-6 bg-green-600 opacity-90">
@@ -179,16 +201,43 @@
                             | Avaliable Seats :
                             {{ $event->availableSeats }}
                         </span>
-                        <a href="{{ route('orangizer.reservations', $event->id) }}"
-                            class="inline-flex items-center px-1 py-1 mt-2 text-gray-200 border border-indigo-100 rounded">
-                            reservation
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" viewBox="0 0 24 24" class="w-2 h-2 ml-2">
-                                <path d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
-                        </a>
+                        <div class="flex items-center justify-between ">
+                            <a href="{{ route('orangizer.reservations', $event->id) }}"
+                                class="inline-flex items-center  px-1 py-1  text-gray-200 border border-indigo-100 rounded">
+                                reservation
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                    class="w-6 h-2 ml-2">
+                                    <path d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </a>
+                            <div>
+                                <a href="{{ route('edit.event', $event->id) }}"
+                                    class="inline-flex items-end px-1  py-1  text-orange-200 border rounded mr border-orang-100">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                                    </svg>
+                                </a>
+
+                                <a href="{{ route('event.delete', $event->id) }}"
+                                    class="inline-flex items-center px-1 py-1  text-orange-200 border rounded border-orang-100">
+                                    <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                                            clip-rule="evenodd">
+                                        </path>
+                                    </svg>
+                                </a>
+
+
+                            </div>
+                        </div>
+
                     </div>
                 @endif
+
             </div>
         @endforeach
 

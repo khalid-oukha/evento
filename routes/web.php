@@ -6,7 +6,9 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\backoffice\CoachController;
 use App\Http\Controllers\Categories\CategoryController;
+use App\Http\Controllers\DeleteEventController;
 use App\Http\Controllers\event\EventController;
+use App\Http\Controllers\event\UpdateEventController;
 use App\Http\Controllers\home\UpcomingEventsController;
 use App\Http\Controllers\Organizer\EventReservationController;
 use App\Http\Controllers\organizer\OrganizerController;
@@ -100,6 +102,12 @@ Route::middleware(['auth', 'organizer'])->group(function () {
     // profile Routes...
     Route::get('create/organizerevent', [OrganizerProfile::class, 'create'])->name('create.event');
     Route::post('store/event', [OrganizerProfile::class, 'store'])->name('store.event');
+
+    Route::get('/edit/{event}/event', [UpdateEventController::class,'edit'])->name('edit.event');
+// Use a placeholder for the event ID in the URI
+Route::patch('/update/{event}/event', [UpdateEventController::class, 'update'])->name('update.event');
+    Route::get('/delete/{event}/event', [DeleteEventController::class,'delete'])->name('event.delete');
+
 });
 
 Route::get('/profile', [OrganizerProfile::class, 'index'])->name('profile.index');
