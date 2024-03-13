@@ -45,18 +45,17 @@ Welcome to the "Evento" platform! This readme file provides an overview of the p
 
 ## Screenshots
 
-![Front-home](screenshoots/home.png)
+![Front-Office Interface](https://github.com/khalid-oukha/evento/blob/main/screenshoots/home.png)
 *Front-Office Interface*
 
-![Back-singlepage](screenshoots/signlepage.png)
-*front-Office Single page*
+![Front-Office Single Page](screenshoots/singlepage.png)
+*Front-Office Single Page*
 
-![Front-home](screenshoots/profile.png)
-*Front-Office profile*
+![Front-Office Profile](screenshoots/profile.png)
+*Front-Office Profile*
 
-![Front-home](screenshoots/events.png)
-*Front-Office events*
+![Front-Office Events](screenshoots/events.png)
+*Front-Office Events*
 
-![Back-office](screenshoots/dashboard.png)
+![Back-Office Interface](https://github.com/khalid-oukha/evento/blob/main/screenshoots/dashboard.png)
 *Back-Office Interface*
-
