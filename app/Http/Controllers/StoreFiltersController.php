@@ -11,8 +11,11 @@ class StoreFiltersController extends Controller
     public function filterByCategorie(Request $request)
     {
         $categorieId = $request->input('categorie');
-        
-        $events = Event::where('category_id', $categorieId)->get();
+
+        $events = Event::where('status', 'active')
+        ->where('category_id', $categorieId)
+
+        ->get();
         return response()->json(['events' => $events]);
 
     }

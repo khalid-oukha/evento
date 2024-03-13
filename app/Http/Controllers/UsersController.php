@@ -15,6 +15,8 @@ class UsersController extends Controller
     public function index()
     {
         $users = User::with('roles')->paginate(10);
+
+
         $roles = Role::whereIn('name', ['organizer', 'admin', 'spectator'])->get();
 
         // dd($users);

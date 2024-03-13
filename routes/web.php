@@ -9,6 +9,7 @@ use App\Http\Controllers\Categories\CategoryController;
 use App\Http\Controllers\DeleteEventController;
 use App\Http\Controllers\event\EventController;
 use App\Http\Controllers\event\UpdateEventController;
+use App\Http\Controllers\GoogleLoginController;
 use App\Http\Controllers\home\UpcomingEventsController;
 use App\Http\Controllers\Organizer\EventReservationController;
 use App\Http\Controllers\organizer\OrganizerController;
@@ -21,6 +22,7 @@ use App\Http\Controllers\TicketController;
 use App\Http\Controllers\UsersController;
 use App\Models\Reservation;
 use Illuminate\Support\Facades\Route;
+
 
 
 
@@ -80,6 +82,7 @@ Route::get('/event/{event}/show', [EventController::class, 'ShowEvent'])->name('
 
 // all events Routes...
 Route::get('/events', [EventController::class, 'fetchEvents'])->name('event.all');
+
 
 
 

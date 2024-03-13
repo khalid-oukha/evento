@@ -48,6 +48,3 @@ function displayProducts(events) {
         `
     });
 }
-
-
-
