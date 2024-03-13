@@ -44,7 +44,7 @@ Welcome to the "Evento" platform! This readme file provides an overview of the p
 
 
 ## Screenshots
-![screencapture-127-0-0-1-8000-2024-03-13-09_48_44]([https://github.com/khalid-oukha/evento/assets/144746719/dfeeecc7-dbea-4340-a771-49fb8083c921](https://github-production-user-asset-6210df.s3.amazonaws.com/144746719/312456205-dfeeecc7-dbea-4340-a771-49fb8083c921.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240313%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240313T123300Z&X-Amz-Expires=300&X-Amz-Signature=ea01ce6d32b67d775db71ffddbc873138716a9a7928e5d95e088208066da7432&X-Amz-SignedHeaders=host&actor_id=144746719&key_id=0&repo_id=766511669))
+![screencapture-127-0-0-1-8000-2024-03-13-09_48_44](https://github.com/khalid-oukha/evento/assets/144746719/20544f69-05bb-46d9-92b3-43f0ac01261b)
 
 ![screencapture-127-0-0-1-8000-events-2024-03-13-10_00_28](https://github.com/khalid-oukha/evento/assets/144746719/34016e46-a761-4701-b83a-a99f04ea3940)
 
