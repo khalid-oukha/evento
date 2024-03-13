@@ -44,18 +44,13 @@ Welcome to the "Evento" platform! This readme file provides an overview of the p
 
 
 ## Screenshots
+![screencapture-127-0-0-1-8000-2024-03-13-09_48_44](https://github.com/khalid-oukha/evento/assets/144746719/dfeeecc7-dbea-4340-a771-49fb8083c921)
 
-![Front-Office Interface](https://github.com/khalid-oukha/evento/blob/main/screenshoots/home.png)
-*Front-Office Interface*
+![screencapture-127-0-0-1-8000-events-2024-03-13-10_00_28](https://github.com/khalid-oukha/evento/assets/144746719/34016e46-a761-4701-b83a-a99f04ea3940)
 
-![Front-Office Single Page](screenshoots/singlepage.png)
-*Front-Office Single Page*
+![Capture d'écran 2024-03-13 095649](https://github.com/khalid-oukha/evento/assets/144746719/f20b57f1-0d75-4ac6-8ff3-49bea21f55eb)
 
-![Front-Office Profile](screenshoots/profile.png)
-*Front-Office Profile*
 
-![Front-Office Events](screenshoots/events.png)
-*Front-Office Events*
+![screencapture-127-0-0-1-8000-organizer-39-reservations-2024-03-13-10_34_30](https://github.com/khalid-oukha/evento/assets/144746719/0f1e384c-ff61-43cf-8df6-b74217070ae4)
 
-![Back-Office Interface](https://github.com/khalid-oukha/evento/blob/main/screenshoots/dashboard.png)
-*Back-Office Interface*
+
